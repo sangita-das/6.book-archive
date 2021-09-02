@@ -14,7 +14,6 @@ function spinnerToggle(displayValue) {
   }
 }
 
-
 //Checking properties undefined or not
 const checkProperties = property => {
   if (property !== undefined && property.length !== 0) {
@@ -39,16 +38,14 @@ searchBtn.addEventListener('click', function () {
   // console.log(searchInput)
   spinnerToggle('block');
   const search = searchInput.value;
-
   if (search === "") {
     spinnerToggle('none');
     errorDiv.innerText = "Search field cannot be empty.";
     return;
   }
 
-
   // books url & fetching it
-  const url = `http://openlibrary.org/search.json?q=${search}`;
+  const url = `https://openlibrary.org/search.json?q=${search}`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => showResult(data.docs, data.numFound))
@@ -88,13 +85,10 @@ function showResult(booksArray, totalBooks) {
         <p>First Published Year: <strong>${docs.first_publish_year}</strong></p>   
         
         <p class="text-secondary">Publisher: ${docs.publisher ? docs.publisher[0] : 'publisher are not avilable'}</p>
-                     
-      
     </div>
     </div> 
         `;
     bookOverview.appendChild(div);
     spinnerToggle('none');
   });
-
 }
