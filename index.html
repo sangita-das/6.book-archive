@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Archive</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <link rel="shortcut icon" href="image/logo1.jpg" type="image/x-icon">
+
+  <style>
+    /* Fonts */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+    * {
+      font-family: "Poppins", sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="container px-md-5 rounded mt-5">
+    <h2 class="text-center pt-5">Online Book Shop</h2>
+    <!-- Input search Box -->
+    <div class="d-flex flex-column align-items-center">
+      <p>Here, Search On Your Favourite Books!</p>
+      <div class="d-flex col-md-6">
+        <input class="form-control me-2" type="search" id="searchInput" placeholder="Search by Book"
+          aria-label="Search">
+        <button class="btn btn-outline-primary" id="search-btn" type="button">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spinner -->
+  <div class="mt-4">
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border text-primary d-none" role="status" id="spinner">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Error message -->
+    <section class="container mt-2">
+      <div class="text-danger text-center fw-bold" id="error"></div>
+      <!-- total result  -->
+      <p id="totalResult" class="mt-5 text-center"></p>
+
+      <!-- Book Details  -->
+      <div id="book-overview" class="row row-cols-1 row-cols-md-4 g-4 mt-3 shadow-lg rounded">
+
+      </div>
+    </section>
+
+    <!-- js API file -->
+    <script src="api.js"></script>
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>
